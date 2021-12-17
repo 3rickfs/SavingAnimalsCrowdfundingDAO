@@ -106,19 +106,19 @@ mod tests {
         testing_env!(context);
         let mut contract = Proyectos::new();
         contract.create_project(
-            "Test Project".to_string(),
-             "This is the descripcion of the project".to_string(),
+            "Perrito 1".to_string(),
+             "Descripcion del proyecto".to_string(),
              123,
              1234,
         );
         assert_eq!(
             Proyecto {
                 balance_actual: 0,
-                descripcion: "This is the descripcion of the Proyecto".to_string(),
+                descripcion: "Descripcion del proyecto".to_string(),
                 duracion: 123 as u128,
                 meta: 1234 as u128,
                 estado: Estados::Activa,
-                perrito: "Test Proyecto".to_string(),
+                perrito: "Perrito 1".to_string(),
             },
             contract.get_details(env::predecessor_account_id()).unwrap()
         );
